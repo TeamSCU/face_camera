@@ -15,9 +15,5 @@
 + baidu_api\
   api操作
 
-## 使用数据库
-```python
-'''MySQL创建数据库名face，使用报错请删掉所有表重新运行如下命令'''
-python manage.py makemigrations
-python manage.py migrate
-```
+## 交互接口
+数据交互接口文档请浏览docs/api.md
