@@ -43,11 +43,12 @@ def GetRequestFile(request):
 #上传文件{"camera_id":1, picture: 文件对象}
 @csrf_exempt
 def upload(request):
+    '''上传测试图片'''
     camera_id=(request.POST)['camera_id']
     picture = GetRequestFile(request)
     if 'error' in picture:
         return RESTfulResponse(picture)
-    filepath = os.path.join(settings.MEDIA_ROOT, 'img', picture.name)
+    filepath = os.path.join(settings.MEDIA_ROOT, 'camera', picture.name)
     
     with open(filepath, 'wb+') as f:
         for chunk in picture.chunks():
@@ -55,9 +56,8 @@ def upload(request):
     #创建图片数据库对象
     picture_obj = {
         "camera":TCamera.objects.get(id=camera_id),
-        "file_name": picture.name,
         "size": round(os.path.getsize(filepath)/float(1024),2),
-        "path":"media/img/"
+        "path":"media/camera/"+picture.name
     }
     response = "success"
     try:

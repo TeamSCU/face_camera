@@ -9,7 +9,7 @@ import random
 
 
 '''全局变量'''
-filePath = "src/hz.jpeg" #操作检测图片路径
+filePath = "src/ww2.jpeg" #操作检测图片路径
 op_face = FaceAPI()  #创建操作对象
 
 

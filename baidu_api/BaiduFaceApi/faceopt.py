@@ -11,6 +11,7 @@ import urllib3, urllib, sys
 from aip import AipFace
 import ssl
 import base64
+import json
 
 #全局变量
 groupId = "test" #测试期间使用此人脸组

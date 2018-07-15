@@ -21,24 +21,22 @@ class TCamera(models.Model):
 class TPictureCamera(models.Model):
     camera = models.ForeignKey(TCamera, models.DO_NOTHING)
     path = models.CharField(max_length=256)
-    file_name = models.CharField(max_length=256)
     size = models.FloatField(blank=True, null=True)
     time = models.DateTimeField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 't_picture_camera'
 
 
 class TPictureUser(models.Model):
     user = models.ForeignKey('TUser', models.DO_NOTHING)
     path = models.CharField(max_length=256)
-    file_name = models.CharField(max_length=256)
     size = models.FloatField(blank=True, null=True)
     time = models.DateTimeField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 't_picture_user'
 
 
@@ -65,7 +63,6 @@ class TUser(models.Model):
     password = models.CharField(max_length=128)
     name = models.CharField(max_length=128, blank=True, null=True)
     phone_number = models.CharField(max_length=128, blank=True, null=True)
-    biography = models.CharField(max_length=1024, blank=True, null=True)
     time = models.DateTimeField()
     
     class Meta:
