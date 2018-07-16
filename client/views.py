@@ -33,7 +33,8 @@ def listAll(request):
     response = {}
     pictures = TPictureCamera.objects.all()
     for pic in pictures:
-        response[pic.file_name] = "<a href='http://{2}/{0}{1}'>{1}</a>".format(pic.path,pic.file_name,request.get_host())
+        filename = str(pic.path).split('/')[-1]
+        response[filename] = "<a href='http://{2}/{0}{1}'>{1}</a>".format(pic.path,filename,request.get_host())
     return RESTfulResponse(response)
 
 
@@ -74,26 +75,48 @@ def login(request):
 
 @csrf_exempt
 def upload_picture(request):
-    '''用户上船照片'''
-    if not request.session['user']:
+    '''用户上传照片'''
+    if not 'user' in request.session:
         return RESTfulResponse("请登陆")
     picture = GetRequestFile(request)
     if 'error' in picture:
         return RESTfulResponse(picture)
-    filepath = os.path.join(settings.MEDIA_ROOT, 'user', picture.name)
+
+    user = TUser.objects.get(account = request.session['user'])
+    path = os.path.join(settings.MEDIA_ROOT, 'user', str(user.id))
+    if not os.path.exists(path):
+        os.makedirs(path)
+    filepath = os.path.join(path, picture.name)
     
     with open(filepath, 'wb+') as f:
         for chunk in picture.chunks():
             f.write(chunk)
     print("user", request.session['user'])
     picture_user = {
-        'path':'media/user/' + picture.name,
+        'path':'media/user/' + str(user.id) + '/' + picture.name,
         'size':round(os.path.getsize(filepath)/float(1024),2),
-        'user':TUser.objects.get(account = request.session['user'])
+        'user':user
     }
     TPictureUser.objects.create(**picture_user)
     return RESTfulResponse("success")
 
-    @csrf_exempt
-    def view_picture_camera(request):
-        '''查看自动拍摄的用户照片'''
+@csrf_exempt
+def view_picture_user(request):
+    '''查看人脸相机自动拍摄的用户照片'''
+    if not 'user' in request.session:
+        return RESTfulResponse("请登陆")
+    user = TUser.objects.get(account = request.session['user'])
+    pictures = TPictureUser.objects.filter(user = user)
+    pictures_dict = []
+    for pic in pictures:
+        pic.time = pic.time.strftime('%Y-%m-%d %H:%M:%S') 
+        pictures_dict.append(model_to_dict(pic))
+    print(pictures_dict)
+    return RESTfulResponse(pictures_dict)
+
+@csrf_exempt
+def view_picture_camera(request):
+    '''查看人脸相机自动拍摄的用户照片'''
+    if not request.session['user']:
+        return RESTfulResponse("请登陆")
+    pictures = TPictureCamera.objects.filter()

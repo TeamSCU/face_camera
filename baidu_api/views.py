@@ -48,20 +48,20 @@ def upload(request):
     picture = GetRequestFile(request)
     if 'error' in picture:
         return RESTfulResponse(picture)
-    filepath = os.path.join(settings.MEDIA_ROOT, 'camera', picture.name)
-    
+
+    path = os.path.join(settings.MEDIA_ROOT, 'camera', camera_id)
+    if not os.path.exists(path):
+        os.makedirs(path)
+    filepath = os.path.join(path, picture.name)
+
     with open(filepath, 'wb+') as f:
         for chunk in picture.chunks():
             f.write(chunk)
-    #创建图片数据库对象
     picture_obj = {
         "camera":TCamera.objects.get(id=camera_id),
         "size": round(os.path.getsize(filepath)/float(1024),2),
-        "path":"media/camera/"+picture.name
+        "path":"media/camera/"+ camera_id + '/' + picture.name
     }
     response = "success"
-    try:
-        TPictureCamera.objects.create(**picture_obj)
-    except BaseException as e:
-        response = str(e)
+    TPictureCamera.objects.create(**picture_obj)# 创建图片数据库对象
     return RESTfulResponse(response)
