@@ -6,9 +6,11 @@ from django.db import models
 from django.views.decorators.csrf import csrf_exempt
 from orm.models import *
 from django.forms.models import model_to_dict
+import logging
 import datetime
 # Create your views here.
 
+logger = logging.getLogger('django')
 
 def RESTfulResponse(data):
     return HttpResponse(json.dumps(data, ensure_ascii=False))
@@ -28,6 +30,7 @@ def GetRequestFile(request):
         response = {'error': "请使用post方法"}
     return response
 
+
 def listAll(request):
     '''返回数据库中所有人脸相机图片url'''
     response = {}
@@ -41,7 +44,6 @@ def listAll(request):
 @csrf_exempt
 def register(request):
     user = request.POST
-    print(user)
     if not ('account' in user and 'password' in user):
         return RESTfulResponse("请求内容错误")
     try:
@@ -51,9 +53,10 @@ def register(request):
         response = str(e)
     return RESTfulResponse(response)
 
+
 @csrf_exempt
 def login(request):
-    user= dict(request.POST)
+    user = dict(request.POST)
     if not ('account' in user and 'password' in user):
         return RESTfulResponse("请求内容错误")
     try:
@@ -117,6 +120,7 @@ def view_picture_user(request):
 @csrf_exempt
 def view_picture_camera(request):
     '''查看人脸相机自动拍摄的用户照片'''
-    if not request.session['user']:
+    user = TUser.objects.get(account = request.session['user'])
+    if not user:
         return RESTfulResponse("请登陆")
-    pictures = TPictureCamera.objects.filter()
+    uids = TUidUser.objects.filter(user = user).values('face_uid')

@@ -1,13 +1,13 @@
 # encoding:utf-8
 from urllib import request, parse
-import json
+import json,uuid
 import base64
 from matplotlib import pyplot as plt
 import matplotlib.patches as patches
 import random
 
 API_KEY = 'bSLIy2ualt16mEUMxNcFL9FX'
-imageType = "BASE64"
+types = ['BASE64', 'URL', 'FACE_TOKEN']
 headers={'Content-Type':'application/json'}
 
 def token():
@@ -33,20 +33,30 @@ def detect(filepath):
     request_url = "https://aip.baidubce.com/rest/2.0/face/v3/detect"
     params = {
         'image':get_file_content(filepath),
-        'image_type':imageType,
+        'image_type':types[0],
         'max_face_num':10
     }
     return post_req(request_url,params)
 
-def search(image,type):
+def search(image,type = 2):
     url = 'https://aip.baidubce.com/rest/2.0/face/v3/search'
     params ={
         'image':image,
-        'image_type':type,
-        'group_id_list':'test',
-        
-
+        'image_type':types[type],
+        'group_id_list': 'test'
     }
+    return post_req(url, params)
+
+def add(image, type = 2):
+    url = 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/add'
+    uid = uuid.uuid1()
+    params = {
+        'image': image,
+        'image_type': types[type],
+        'group_id_list': 'test',
+        'user_id': uid
+    }
+    return uid
 
 
 # def test():

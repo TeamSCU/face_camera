@@ -137,3 +137,35 @@ STATIC_URL = '/static/'
 # BASE_DIR 是项目所在的目录，这样文件就会存储在当前的开发目录下的一个`media`的文件夹下
 MEDIA_ROOT = BASE_DIR + '/media/'
 MEDIA_URL = '/media/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'formatter': {
+            'format': '{levelname} {asctime} {module} {process:d} {message}',
+            'style': '{',
+        },
+    },
+
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'log/debug.log',
+        },
+        'terminal': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'formatter',
+        },
+    },
+
+    'loggers': {
+        'django': {
+            'handlers': ['terminal'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
