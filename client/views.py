@@ -7,8 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from orm.models import *
 from django.forms.models import model_to_dict
 import logging
-import datetime
-# Create your views here.
+from baiduHttp import *
 
 logger = logging.getLogger('django')
 
@@ -100,7 +99,29 @@ def upload_picture(request):
         'size':round(os.path.getsize(filepath)/float(1024),2),
         'user':user
     }
-    TPictureUser.objects.create(**picture_user)
+    obj = TPictureUser.objects.create(**picture_user)
+    ## 人脸检测
+    try:
+        content = detect(filepath)['result']['face_list']
+        logger.debug(content)
+    except BaseException as e:
+        ## 照片中没有人脸,删除数据库和照片文件
+        logger.debug(str(e))
+        os.remove(filepath)
+        obj.delete()
+        return RESTfulResponse('没有检测到人脸')
+
+    ## 人脸检测并注册
+    for face in content:
+        if face['face_probability'] < 0.90:
+            continue
+        search_result = search(face['face_token'])['result']['user_list'][0]
+        logger.info(search_result)
+        if search_result['score'] < 0.8:
+            uid = add(face['face_token'])
+        else:
+            uid = search_result['user_id']
+        TUidUser.objects.create(**{'face_uid':uid,'user':obj})
     return RESTfulResponse("success")
 
 @csrf_exempt
