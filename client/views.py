@@ -14,6 +14,8 @@ logger = logging.getLogger('django')
 def RESTfulResponse(data):
     return HttpResponse(json.dumps(data, ensure_ascii=False))
 
+status = ['SUCCESS','LOGIN_ERROR','NO_FACE','DUPLI_FILE_NAME']
+
 #解析请求数据
 #解析上传文件
 def GetRequestFile(request):
@@ -44,7 +46,7 @@ def listAll(request):
 def register(request):
     user = request.POST
     if not ('account' in user and 'password' in user):
-        return RESTfulResponse("请求内容错误")
+        return RESTfulResponse("缺少用户名或密码")
     try:
         TUser.objects.create(**user)
         response="success"
@@ -57,7 +59,7 @@ def register(request):
 def login(request):
     user = dict(request.POST)
     if not ('account' in user and 'password' in user):
-        return RESTfulResponse("请求内容错误")
+        return RESTfulResponse("缺少用户名或密码")
     try:
         user_check = TUser.objects.get(account = user['account'])
 
@@ -99,7 +101,11 @@ def upload_picture(request):
         'size':round(os.path.getsize(filepath)/float(1024),2),
         'user':user
     }
-    obj = TPictureUser.objects.create(**picture_user)
+    try:
+        obj = TPictureUser.objects.create(**picture_user)
+    except:
+        logger.info("文件名重复，源文件被覆盖")
+
     ## 人脸检测
     try:
         content = detect(filepath)['result']['face_list']
@@ -121,14 +127,14 @@ def upload_picture(request):
             uid = add(face['face_token'])
         else:
             uid = search_result['user_id']
-        TUidUser.objects.create(**{'face_uid':uid,'user':obj})
-    return RESTfulResponse("success")
+        TUidUser.objects.create(**{'face_uid':uid,'user':user})
+    return RESTfulResponse(status[0])
 
 @csrf_exempt
 def view_picture_user(request):
     '''查看人脸相机自动拍摄的用户照片'''
     if not 'user' in request.session:
-        return RESTfulResponse("请登陆")
+        return RESTfulResponse(status[1])
     user = TUser.objects.get(account = request.session['user'])
     pictures = TPictureUser.objects.filter(user = user)
     pictures_dict = []
@@ -140,8 +146,20 @@ def view_picture_user(request):
 
 @csrf_exempt
 def view_picture_camera(request):
-    '''查看人脸相机自动拍摄的用户照片'''
-    user = TUser.objects.get(account = request.session['user'])
-    if not user:
-        return RESTfulResponse("请登陆")
+    try:
+        '''查看人脸相机自动拍摄的用户照片'''
+        user = TUser.objects.get(account = request.session['user'])
+    except:
+        return RESTfulResponse(status[1])
     uids = TUidUser.objects.filter(user = user).values('face_uid')
+    pictures = []
+    for uid in uids:
+        picture_cur = TUidPicture.objects.filter(uid = uid['face_uid']).values('picture_id')
+        pictures += [p['picture_id'] for p in picture_cur]
+    pictures = set(pictures)
+    paths = []
+    for pic_id in pictures:
+        pic_obj = TPictureCamera.objects.get(id=pic_id)
+        pic_obj.time = pic_obj.time.strftime('%Y-%m-%d %H:%M:%S')
+        paths.append(model_to_dict(pic_obj))
+    return RESTfulResponse(paths)

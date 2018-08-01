@@ -1,13 +1,13 @@
-## <center>树莓派</center>
+## 树莓派
 
 ### 1.上传文件
 - url: /camera/upload
 - post: {"camera_id":1, picture: 文件对象} (文件名注意唯一性，建议caimera_id + 时间组合)
 
 ***
-## <center>安卓客户端</center>
+## 安卓客户端
 ### 1.  用户注册
-- url： /user/register
+- url： /client/register
 - post: 
     {
         account:hch,
@@ -19,23 +19,29 @@
 
 
 ### 2.用户登陆
-- url: /user/login
+- url: /client/login
 - post: {account:hch, password:123}
 - return: 登陆成功的情况下返回用户资料{"id": 3, "account": "['hch']", "password": "['123']", "name": "['长长长鸿']", "phone_number": "['123456']", "time": "2018-07-15 16:27:54"}，登录则失败返回其他错误信息
 
 ### 3.用户手机上传照片（登陆后）
-- url: /user/upload
+- url: /client/upload
 - post: {picture:文件对象} (文件名注意唯一性，建议user_id + 时间组合)
 
-### 4.用户查看人脸识别相机拍摄的照片
+### 4.用户查看人脸识别相机拍摄的照片(登陆后)
+-url: /client/picture/camera
+return: [{"id": 5, "camera": 1, "path": "media/camera/1/ww2.jpeg", "size": 87.83, "time": "2018-07-29 22:14:29"}]
 
 ### 5.查看用户手机上传的照片
+-url: /client/picture/user
+return: [{"id": 1, "user": 1, "path": "media/user/1/ww5.jpg", "size": 256.05, "time": "2018-07-15 22:14:42"}, {"id": 2, "user": 1, "path": "media/user/1/ww1.jpg", "size": 317.17, "time": "2018-07-15 22:14:47"}, {"id": 3, "user": 1, "path": "media/user/1/479cad37d15e3ff5dcb05939af3cbce2.jpg", "size": 197.84, "time": "2018-08-01 21:24:35"}]
+
+***
+## 临时测试
+### 查看所有已上传图片
+- url: user/picture/all
 
 
 ***
-## <center>临时测试</center>
-### 查看所有已上传图片
-- url: user/picture/all
 
 
 ***

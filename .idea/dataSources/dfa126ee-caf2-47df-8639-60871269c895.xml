@@ -1430,7 +1430,7 @@ model</ColNames>
     </column>
     <column id="333" parent="240" name="path">
       <Position>2</Position>
-      <DataType>varchar(256)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1461,191 +1461,218 @@ model</ColNames>
       <ColNames>camera_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="339" parent="240" name="PRIMARY">
+    <index id="339" parent="240" name="t_picture_camera_path_dceece71_uniq">
+      <ColNames>path</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="340" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="340" parent="240" name="t_picture_camera_path_uindex">
+    <key id="341" parent="240" name="t_picture_camera_path_uindex">
       <ColNames>path</ColNames>
       <UnderlyingIndexName>t_picture_camera_path_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="341" parent="240" name="t_picture_camera_camera_id_2ae94a3b_fk_t_camera_id">
+    <foreign-key id="342" parent="240" name="t_picture_camera_camera_id_2ae94a3b_fk_t_camera_id">
       <ColNames>camera_id</ColNames>
       <RefSchemaName>face</RefSchemaName>
       <RefTableName>t_camera</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="342" parent="241" name="id">
+    <column id="343" parent="241" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="241" name="path">
+    <column id="344" parent="241" name="path">
       <Position>2</Position>
-      <DataType>varchar(256)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="241" name="size">
+    <column id="345" parent="241" name="size">
       <Position>3</Position>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="345" parent="241" name="time">
+    <column id="346" parent="241" name="time">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="346" parent="241" name="user_id">
+    <column id="347" parent="241" name="user_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="347" parent="241" name="t_picture_user_path_uindex">
+    <index id="348" parent="241" name="t_picture_user_path_uindex">
       <ColNames>path</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="348" parent="241" name="t_picture_user_user_id_68a36821_fk_t_user_id">
+    <index id="349" parent="241" name="t_picture_user_user_id_68a36821_fk_t_user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="349" parent="241" name="PRIMARY">
+    <index id="350" parent="241" name="t_picture_user_path_8cc4c33c_uniq">
+      <ColNames>path</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="351" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="350" parent="241" name="t_picture_user_path_uindex">
+    <key id="352" parent="241" name="t_picture_user_path_uindex">
       <ColNames>path</ColNames>
       <UnderlyingIndexName>t_picture_user_path_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="351" parent="241" name="t_picture_user_user_id_68a36821_fk_t_user_id">
+    <foreign-key id="353" parent="241" name="t_picture_user_user_id_68a36821_fk_t_user_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>face</RefSchemaName>
       <RefTableName>t_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="352" parent="242" name="id">
+    <column id="354" parent="242" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="353" parent="242" name="uid">
+    <column id="355" parent="242" name="uid">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="354" parent="242" name="picture_id">
+    <column id="356" parent="242" name="picture_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="355" parent="242" name="t_uid_picture_picture_id_447d3269_fk_t_picture_camera_id">
+    <index id="357" parent="242" name="t_uid_picture_picture_id_447d3269_fk_t_picture_camera_id">
       <ColNames>picture_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="356" parent="242" name="PRIMARY">
+    <index id="358" parent="242" name="t_uid_picture_uid_picture_id_9837b656_uniq">
+      <ColNames>uid
+picture_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="359" parent="242" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="357" parent="242" name="t_uid_picture_picture_id_447d3269_fk_t_picture_camera_id">
+    <foreign-key id="360" parent="242" name="t_uid_picture_picture_id_447d3269_fk_t_picture_camera_id">
       <ColNames>picture_id</ColNames>
       <RefSchemaName>face</RefSchemaName>
       <RefTableName>t_picture_camera</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="358" parent="243" name="id">
+    <column id="361" parent="243" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="359" parent="243" name="face_uid">
+    <column id="362" parent="243" name="face_uid">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="360" parent="243" name="user_id">
+    <column id="363" parent="243" name="user_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="361" parent="243" name="t_uid_user_user_id_0de65090_fk_t_user_id">
+    <index id="364" parent="243" name="t_uid_user_user_id_0de65090_fk_t_user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="362" parent="243" name="PRIMARY">
+    <index id="365" parent="243" name="t_uid_user_face_uid_user_id_0e0740e7_uniq">
+      <ColNames>face_uid
+user_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="366" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="363" parent="243" name="t_uid_user_user_id_0de65090_fk_t_user_id">
+    <foreign-key id="367" parent="243" name="t_uid_user_user_id_0de65090_fk_t_user_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>face</RefSchemaName>
       <RefTableName>t_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="364" parent="244" name="id">
+    <column id="368" parent="244" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="365" parent="244" name="account">
+    <column id="369" parent="244" name="account">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="366" parent="244" name="password">
+    <column id="370" parent="244" name="password">
       <Position>3</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="367" parent="244" name="name">
+    <column id="371" parent="244" name="name">
       <Position>4</Position>
       <DataType>varchar(128)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="368" parent="244" name="phone_number">
+    <column id="372" parent="244" name="phone_number">
       <Position>5</Position>
       <DataType>varchar(128)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="369" parent="244" name="time">
+    <column id="373" parent="244" name="time">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="370" parent="244" name="t_user_account_uindex">
+    <index id="374" parent="244" name="t_user_account_uindex">
       <ColNames>account</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="371" parent="244" name="PRIMARY">
+    <index id="375" parent="244" name="t_user_account_1017b2ac_uniq">
+      <ColNames>account</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="376" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="372" parent="244" name="t_user_account_uindex">
+    <key id="377" parent="244" name="t_user_account_uindex">
       <ColNames>account</ColNames>
       <UnderlyingIndexName>t_user_account_uindex</UnderlyingIndexName>
     </key>
