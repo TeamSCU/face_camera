@@ -3,7 +3,6 @@
 >建议使用python或conda虚拟环境
 + python3.6  
 + pip install Django==2.0.5  
-+ pip install baidu-aip  
 
 ## 模块说明
 + face_camera\
