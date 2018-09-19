@@ -63,8 +63,8 @@ class TUidUser(models.Model):
 class TUser(models.Model):
     account = models.CharField(max_length=128, unique=True)
     password = models.CharField(max_length=128)
-    name = models.CharField(max_length=128, blank=True, null=True)
-    phone_number = models.CharField(max_length=128, blank=True, null=True)
+    #name = models.CharField(max_length=128, blank=True, null=True)
+    phone_number = models.CharField(max_length=128, blank=True, null=False, unique=True)
     time = models.DateTimeField()
     
     class Meta:

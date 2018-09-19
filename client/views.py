@@ -61,10 +61,9 @@ def login(request):
     if not ('account' in user and 'password' in user):
         return RESTfulResponse("缺少用户名或密码")
     try:
-        user_check = TUser.objects.get(account = user['account'])
-
+        user_check = TUser.objects.get(account=user['account'])
         if not user_check:
-           return RESTfulResponse("用户账户不存在")
+           return RESTfulResponse("该用户名未注册")
         else:
             # print(type(user_check.password), str(user['password']))
             if user_check.password == str(user['password']):
@@ -78,6 +77,29 @@ def login(request):
     return RESTfulResponse(response)
 
 @csrf_exempt
+def forget_passwd(request):
+    data = request.POST #[电话号码，新密码]
+    user = TUser.objects.get(phone_number = data['phone_number'])
+    if user:
+        user.password = data['new_password']
+        user.save(force_update=True)
+        return RESTfulResponse('重置密码成功')
+    else:
+        return RESTfulResponse('找不到该预留号码')
+
+@csrf_exempt
+def update_passwd(request):
+    data = request.POST #[旧密码，新密码]
+    user = TUser.objects.get(account = request.session['user'])
+    if user.password == data['old_password']:
+        user.password = data['new_password']
+        user.save(force_update=True)
+        return RESTfulResponse('修改成功')
+    else:
+        return RESTfulResponse('密码输入错误')
+
+
+@csrf_exempt
 def upload_picture(request):
     '''用户上传照片'''
     if not 'user' in request.session:
@@ -85,7 +107,6 @@ def upload_picture(request):
     picture = GetRequestFile(request)
     if 'error' in picture:
         return RESTfulResponse(picture)
-
     user = TUser.objects.get(account = request.session['user'])
     path = os.path.join(settings.MEDIA_ROOT, 'user', str(user.id))
     if not os.path.exists(path):
@@ -128,13 +149,13 @@ def upload_picture(request):
         else:
             uid = search_result['user_id']
         TUidUser.objects.create(**{'face_uid':uid,'user':user})
-    return RESTfulResponse(status[0])
+    return RESTfulResponse('上传成功')
 
 @csrf_exempt
 def view_picture_user(request):
     '''查看人脸相机自动拍摄的用户照片'''
     if not 'user' in request.session:
-        return RESTfulResponse(status[1])
+        return RESTfulResponse('请登录')
     user = TUser.objects.get(account = request.session['user'])
     pictures = TPictureUser.objects.filter(user = user)
     pictures_dict = []
@@ -150,7 +171,7 @@ def view_picture_camera(request):
         '''查看人脸相机自动拍摄的用户照片'''
         user = TUser.objects.get(account = request.session['user'])
     except:
-        return RESTfulResponse(status[1])
+        return RESTfulResponse('请登录')
     uids = TUidUser.objects.filter(user = user).values('face_uid')
     pictures = []
     for uid in uids:

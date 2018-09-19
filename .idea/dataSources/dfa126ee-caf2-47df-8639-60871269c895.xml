@@ -1640,30 +1640,31 @@ user_id</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="371" parent="244" name="name">
+    <column id="371" parent="244" name="phone_number">
       <Position>4</Position>
       <DataType>varchar(128)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="372" parent="244" name="phone_number">
+    <column id="372" parent="244" name="time">
       <Position>5</Position>
-      <DataType>varchar(128)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="373" parent="244" name="time">
-      <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="374" parent="244" name="t_user_account_uindex">
+    <index id="373" parent="244" name="t_user_account_uindex">
       <ColNames>account</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="375" parent="244" name="t_user_account_1017b2ac_uniq">
+    <index id="374" parent="244" name="t_user_account_1017b2ac_uniq">
       <ColNames>account</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="375" parent="244" name="t_user_phone_number_b17cb268_uniq">
+      <ColNames>phone_number</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
