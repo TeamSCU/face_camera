@@ -2,9 +2,9 @@
 from urllib import request, parse
 import json,uuid
 import base64
-from matplotlib import pyplot as plt
-import matplotlib.patches as patches
-import random
+# from matplotlib import pyplot as plt
+# import matplotlib.patches as patches
+# import random
 
 API_KEY = 'bSLIy2ualt16mEUMxNcFL9FX'
 types = ['BASE64', 'URL', 'FACE_TOKEN']
@@ -49,13 +49,17 @@ def search(image,type = 2):
 
 def add(image, type = 2):
     url = 'https://aip.baidubce.com/rest/2.0/face/v3/faceset/user/add'
-    uid = uuid.uuid1()
+    uid = str(uuid.uuid1())
+    while '-' in uid:
+        uid = uid.replace('-', '')
     params = {
         'image': image,
         'image_type': types[type],
-        'group_id_list': 'test',
+        'group_id': 'test',
         'user_id': uid
     }
+    content = post_req(url, params)
+    print(content)
     return uid
 
 

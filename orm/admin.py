@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
-admin.site.register([TUser, TCamera, TPictureUser])
+admin.site.register([TCamera, TPictureUser])
 
 @admin.register(TPictureCamera)
 class TPictureCameraAdmin(admin.ModelAdmin):

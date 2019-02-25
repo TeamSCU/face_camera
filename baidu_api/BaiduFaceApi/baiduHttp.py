@@ -49,27 +49,5 @@ def search(image,type):
     }
 
 
-# def test():
-#     '''提取图片中所有人脸矩形框保存到 ./src/face 路径下'''
-#     filepath='src/hz.jpeg'
-#     result = detect(filepath)['result']
-#     face_boxes = []
-#     img = Image.open(filepath, "r")
-#     for i in range(0, (result['face_num'])):
-#         if (result['face_list'][i]['face_probability'] > 0.5): #人脸可能性大于0.7
-#             round_Baidu = result['face_list'][i]['location']
-#             round_Image = [
-#                 #坐标调整
-#                 round_Baidu['left'] - round_Baidu['width']/3,
-#                 round_Baidu['top']- round_Baidu['height']/3,
-#                 round_Baidu['left'] + round_Baidu['width']*4/3,
-#                 round_Baidu['top'] + round_Baidu['height']*4/3
-#             ]
-#             face_boxes.append(round_Image)
-#             img = ImageOpt.draw(img, round_Image[0],round_Image[1],round_Image[2],round_Image[3])
-#     img.show()#显示图片
-
-#
-
 if __name__ == '__main__':
     print(detect('./src/hz.jpeg'))

@@ -87,7 +87,7 @@ def upload(request):
         obj.delete()
         return RESTfulResponse('没有检测到人脸')
 
-    ## 人脸检测并注册
+    # 树莓派照片人脸检测并注册
     for face in content:
         if face['face_probability'] < 0.90:
             continue

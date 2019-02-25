@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'face_camera.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
-        'NAME': 'face',
+        'NAME': 'r_face',
         'USER': 'root',
         'PASSWORD': '123',
         'HOST': 'face.3cat.top',
@@ -152,7 +152,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'log/debug.log',
+            'filename': BASE_DIR + '/log/debug.log',
         },
         'terminal': {
             'level': 'DEBUG',
