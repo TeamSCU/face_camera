@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a5384cb-01e4-414c-9c6b-9bfa414327c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfa126ee-caf2-47df-8639-60871269c895.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dfa126ee-caf2-47df-8639-60871269c895.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/face_camera.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/face_camera.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baiduHttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/baiduHttp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baidu_api/BaiduFaceApi/baiduHttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/baidu_api/BaiduFaceApi/baiduHttp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baidu_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/baidu_api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/api.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/api.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_camera/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_camera/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/user/1/479cad37d15e3ff5dcb05939af3cbce2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm/migrations/0002_auto_20180801_2209.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm/migrations/0003_auto_20180919_1347.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm/migrations/0004_auto_20180919_1351.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orm/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/orm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orm/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+            <state relative-caret-position="169">
+              <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -83,10 +66,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/orm/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+            <state relative-caret-position="375">
+              <caret line="38" column="15" lean-forward="true" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+              <folding>
+                <element signature="e#467#495#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_uid_picture">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -95,8 +90,8 @@
         <entry file="file://$PROJECT_DIR$/docs/api.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="275">
-                <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <first_editor relative-caret-position="500">
+                <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
               </first_editor>
               <second_editor />
             </state>
@@ -104,31 +99,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_camera">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/baiduHttp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-              <folding>
-                <element signature="e#17#50#0" expanded="true" />
-              </folding>
+        <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_uid_user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/orm/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="550">
+                <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -171,12 +166,14 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dfa126ee-caf2-47df-8639-60871269c895/console.sql" />
         <option value="$PROJECT_DIR$/face_camera/settings.py" />
         <option value="$PROJECT_DIR$/orm/admin.py" />
-        <option value="$PROJECT_DIR$/orm/models.py" />
-        <option value="$PROJECT_DIR$/client/urls.py" />
         <option value="$PROJECT_DIR$/baidu_api/views.py" />
         <option value="$PROJECT_DIR$/baiduHttp.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/client/urls.py" />
         <option value="$PROJECT_DIR$/docs/api.md" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/121bf17e-6d48-48aa-9ccd-0eafa2450c48/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/orm/models.py" />
         <option value="$PROJECT_DIR$/client/views.py" />
       </list>
     </option>
@@ -206,6 +203,29 @@
               <item name="face_camera" type="b2602c69:ProjectViewProjectNode" />
               <item name="face_camera" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face_camera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="face_camera" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face_camera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="face_camera" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face_camera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="face_camera" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face_camera" type="b2602c69:ProjectViewProjectNode" />
+              <item name="face_camera" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="oTGME5rffrgwfvxHot49kHDTJUWI" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -303,12 +323,13 @@
       <option name="presentableId" value="Default" />
       <updated>1532615353860</updated>
       <workItem from="1550801555762" duration="7823000" />
-      <workItem from="1551005339025" duration="9203000" />
+      <workItem from="1551005339025" duration="9918000" />
+      <workItem from="1551867123272" duration="7075000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17026000" />
+    <option name="totallyTimeSpent" value="24816000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -321,14 +342,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17158177" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3016086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39008042" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35254693" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.35254693" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297587" />
@@ -336,7 +358,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3297587" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32841823" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.31769437" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.31769437" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32841823" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3150134" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -351,6 +373,15 @@
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/client/views.py</url>
+          <line>146</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Python.DjangoServer">
         <watch expression="request.POST" />
@@ -358,35 +389,7 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/python36/Lib/site-packages/django/db/models/query.py" />
-    <entry file="file://$PROJECT_DIR$/baidu_api/BaiduFaceApi/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="88">
-            <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://dfa126ee-caf2-47df-8639-60871269c895/schema/face/table/t_camera">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/python36/Lib/site-packages/django/db/models/fields/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="484">
-            <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://dfa126ee-caf2-47df-8639-60871269c895/schema/face/table/auth_user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -425,9 +428,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/user/1/479cad37d15e3ff5dcb05939af3cbce2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/user/1/479cad37d15e3ff5dcb05939af3cbce2.jpg" />
     <entry file="file://$PROJECT_DIR$/media/camera/1/02-20-57-8a2fadce-b71c-4846-8068-74bcf60d35d8_mr1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -437,9 +438,6 @@
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/121bf17e-6d48-48aa-9ccd-0eafa2450c48/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="das://dfa126ee-caf2-47df-8639-60871269c895/schema/face/table/t_uid_picture">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -500,9 +498,7 @@
     <entry file="file://$PROJECT_DIR$/client/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/user/hch/02-20-57-8a2fadce-b71c-4846-8068-74bcf60d35d8_mr1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/user/hch/02-20-57-8a2fadce-b71c-4846-8068-74bcf60d35d8_mr1.jpg" />
     <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/django_migrations">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -517,26 +513,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_camera">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orm/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding>
-            <element signature="e#467#495#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/user/[object Undefined]/wx343dccc28c872490.o6zAJs4WF1x4-TGFO__dKelhBF_Y.jyt3aLwh2SSX5f6697dab5eb77bbd82beb12ed9bf33d.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/user/[object Undefined]/wx343dccc28c872490.o6zAJs4WF1x4-TGFO__dKelhBF_Y.jyt3aLwh2SSX5f6697dab5eb77bbd82beb12ed9bf33d.jpg" />
     <entry file="file://$USER_HOME$/Anaconda3/envs/python36/Lib/site-packages/django/core/handlers/exception.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -558,12 +535,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/user/oTGME5pqKfjL_DYY1OdSrq1nS-KI/oTGME5pqKfjL_DYY1OdSrq1nS-KI20190224193037.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/user/oTGME5pqKfjL_DYY1OdSrq1nS-KI/oTGME5pqKfjL_DYY1OdSrq1nS-KI20190224193250.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/user/oTGME5pqKfjL_DYY1OdSrq1nS-KI/oTGME5pqKfjL_DYY1OdSrq1nS-KI20190224193037.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/user/oTGME5pqKfjL_DYY1OdSrq1nS-KI/oTGME5pqKfjL_DYY1OdSrq1nS-KI20190224193250.jpg" />
     <entry file="file://$PROJECT_DIR$/orm/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -571,26 +544,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/orm/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/user/oTGME5pqKfjL_DYY1OdSrq1nS-KI/oTGME5pqKfjL_DYY1OdSrq1nS-KI20190224203135.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/user/oTGME5pqKfjL_DYY1OdSrq1nS-KI/oTGME5pqKfjL_DYY1OdSrq1nS-KI20190224201411.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_uid_picture">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/media/user/oTGME5pqKfjL_DYY1OdSrq1nS-KI/oTGME5pqKfjL_DYY1OdSrq1nS-KI20190224203135.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/user/oTGME5pqKfjL_DYY1OdSrq1nS-KI/oTGME5pqKfjL_DYY1OdSrq1nS-KI20190224201411.jpg" />
     <entry file="file://$USER_HOME$/Anaconda3/envs/python36/Lib/uuid.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
@@ -607,7 +562,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/baiduHttp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="1075">
           <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
           <folding>
             <element signature="e#17#50#0" expanded="true" />
@@ -615,31 +570,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_picture_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_uid_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_picture_camera">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/urls.py">
+    <entry file="file://$PROJECT_DIR$/orm/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="75">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="550">
+            <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -650,20 +594,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/django/views/decorators/csrf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_picture_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/121bf17e-6d48-48aa-9ccd-0eafa2450c48/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="173" lean-forward="true" selection-start-column="173" selection-end-column="173" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_uid_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docs/api.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="275">
-            <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <first_editor relative-caret-position="500">
+            <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_camera">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_uid_picture">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/orm/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="38" column="15" lean-forward="true" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding>
+            <element signature="e#467#495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://121bf17e-6d48-48aa-9ccd-0eafa2450c48/schema/r_face/table/t_picture_camera">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+        <state relative-caret-position="169">
+          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>

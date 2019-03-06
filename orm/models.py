@@ -23,7 +23,7 @@ class TPictureCamera(models.Model):
     camera = models.ForeignKey(TCamera, models.DO_NOTHING)
     path = models.CharField(max_length=255, unique=True)
     size = models.FloatField(blank=True, null=True)
-    time = models.DateTimeField()
+    time = models.DateTimeField(default = timezone.now)
 
     class Meta:
         managed = True

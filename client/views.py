@@ -21,14 +21,12 @@ status = ['SUCCESS','LOGIN_ERROR','NO_FACE','DUPLI_FILE_NAME']
 def GetRequestFile(request):
     response = {}
     if request.method == 'POST':
-        try:
-            file_name = list(request.FILES.keys())[0]
-            picture = request.FILES.get(file_name)
-            picture.name = file_name+'.jpg'
-            return picture
-        except BaseException as e:
-            print(str(e))
-            response = {'error': str(e)}
+        if len(list(request.FILES.keys()))<1:
+            return {'error': "上传文件为空"}
+        file_name = list(request.FILES.keys())[0]
+        picture = request.FILES.get(file_name)
+        picture.name = file_name+'.jpg'
+        return picture
     else:
         response = {'error': "请使用post方法"}
     return response
@@ -50,14 +48,14 @@ def upload_picture(request):
 
     # 解析请求用户图片
     picture = GetRequestFile(request)
-    filename = picture.name
-    
+
     # 空文件对象
     if not picture:
         return RESTfulResponse('上传图片为空') 
     
     if 'error' in picture:
         return RESTfulResponse(picture)
+    filename = picture.name
     account = request.POST['account']
 
     # 保存图片
@@ -112,14 +110,14 @@ def upload_picture(request):
             TUidUser.objects.create(**{'face_uid': uid, 'account': account})
         except Exception as e:
             logger.info(str(e))
-    return RESTfulResponse('上传成功')
+    return view_picture_user(request)
 
 @csrf_exempt
 def view_picture_user(request):
     '''查看用户自己上传的照片'''
 
     account = request.POST['account']
-    pictures = TPictureUser.objects.filter(account = account)
+    pictures = TPictureUser.objects.filter(account=account)
 
     pictures_dict = []
     for pic in pictures:

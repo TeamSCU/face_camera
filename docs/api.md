@@ -18,6 +18,7 @@
 
 ### 查看用户手机上传的照片
 - url: /client/picture/user
+- post: {account:hch}
 - return: [{"id": 1, "user": 1, "path": "media/user/1/ww5.jpg", "size": 256.05, "time": "2018-07-15 22:14:42"}, {"id": 2, "user": 1, "path": "media/user/1/ww1.jpg", "size": 317.17, "time": "2018-07-15 22:14:47"}, {"id": 3, "user": 1, "path": "media/user/1/479cad37d15e3ff5dcb05939af3cbce2.jpg", "size": 197.84, "time": "2018-08-01 21:24:35"}]
 
 ### 删除选择的树莓派照片
