@@ -102,7 +102,7 @@ def upload_picture(request):
             except:
                 pass
 
-        if (not search_result) or search_result['score'] < 0.8:
+        if (not search_result) or search_result['score'] < 70:
             uid = add(face['face_token'])
         else:
             uid = search_result['user_id']

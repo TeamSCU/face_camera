@@ -93,7 +93,7 @@ def upload(request):
             continue
         search_result = search(face['face_token'])['result']['user_list'][0]
         logger.info(search_result)
-        if search_result['score'] < 0.8:
+        if search_result['score'] < 70:
             uid = add(face['face_token'])
         else:
             uid = search_result['user_id']
